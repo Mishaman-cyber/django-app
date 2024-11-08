@@ -1,25 +1,4 @@
-pip>=23.2
-wheel>=0.41
-
-
-# Core Django and its dependencies
-Django==4.2.5
-
-# Database support (PostgreSQL example)
-psycopg2-binary==2.9.7
-
-# ASGI support for Vercel (optional)
-daphne==4.0.0
-
-# Environment variable management
-python-dotenv==1.0.0
-
-# Additional dependencies
-dj-database-url==1.0.0
-django-environ==0.10.0
-whitenoise==6.5.0   # For serving static files
-gunicorn==21.2.0    # WSGI server for production
-
-# Linting and formatting (optional)
-flake8==6.1.0
-black==24.10.1
+asgiref==3.8.1
+Django==5.1.2
+sqlparse==0.5.1
+tzdata==2024.2
