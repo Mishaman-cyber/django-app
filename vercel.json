@@ -1,13 +1,16 @@
 {
-    "version": 3.9,
+    "version": 2,
     "builds": [
       {
-        "src": "manage.py",
+        "src": "myproj/wsgi.py",
         "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
         "config": {
-          "maxLambdaSize": "50mb",
-          "installCommand": "pip install --no-cache-dir --target . --upgrade -r requirements.txt"
-
+          "distDir": "staticfiles"
         }
       }
     ],
@@ -17,18 +20,8 @@
         "dest": "/static/$1"
       },
       {
-        "src": "/media/(.*)",
-        "dest": "/media/$1"
-      },
-      {
         "src": "/(.*)",
-        "dest": "manage.py"
+        "dest": "myproj/wsgi.py"
       }
-    ],
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "myproj.settings",
-      "PYTHONUNBUFFERED": "1",
-      "PYTHONPATH": "."
-    }
+    ]
   }
-  
