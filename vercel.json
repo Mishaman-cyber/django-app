@@ -1,11 +1,13 @@
 {
-    "version": 2,
+    "version": 3.9,
     "builds": [
       {
         "src": "manage.py",
         "use": "@vercel/python",
         "config": {
-          "maxLambdaSize": "50mb"
+          "maxLambdaSize": "50mb",
+          "installCommand": "pip install --no-cache-dir --target . --upgrade -r requirements.txt"
+
         }
       }
     ],

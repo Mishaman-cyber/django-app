@@ -1,3 +1,7 @@
+pip>=23.2
+wheel>=0.41
+
+
 # Core Django and its dependencies
 Django==4.2.5
 
